@@ -2,7 +2,7 @@
 pkg install git php -y
 git clone https://github.com/tkacank/mikhmon.git
 cat >start-mikhmon <<EOL
-#bin/bash
+#!/bin/bash
 if pgrep "php" >/dev/null 2>&1 ; then
 killall php
 fi
@@ -10,7 +10,7 @@ cd mikhmon
 php -S 0.0.0.0:8080
 EOL
 cat >update-mikhmon <<EOL
-#bin/bash
+#!/bin/bash
 mkdir ~/backup-mikhmon
 cp ~/mikhmon/include/config.php ~/backup-mikhmon/config.php
 cp -rf ~/mikhmon/voucher/. ~/backup-mikhmon/voucher/
@@ -26,7 +26,7 @@ rm -rf ~/backup-mikhmon
 ./start-mikhmon
 EOL
 cat >remove-mikhmon <<EOL
-#bin/bash
+#!/bin/bash
 rm -rf mikhmon
 EOL
 cat >.bashrc <<EOL	
