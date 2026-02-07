@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 pkg install git php -y
 git clone https://github.com/tkacank/mikhmon.git
 cat >start-mikhmon <<EOL
